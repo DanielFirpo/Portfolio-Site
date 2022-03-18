@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import profile from "../../images/profile.png";
+import profile from "../../images/profile.jpg";
 
 import { Link, animateScroll as scroll } from "react-scroll";
 
