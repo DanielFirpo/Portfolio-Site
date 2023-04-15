@@ -4,9 +4,9 @@ import Ball from '../GameLogic/Ball';
 import Particles from "./Particles";
 import * as GameStates from "../GameLogic/GameStates"
 
-let mousePos = { x: 0, y: 0 };
-
 class GameLoop {
+
+    mousePos = { x: window.innerWidth / 2, y: 0 };
 
     fontSize = 30;
     lineHeight = 40;
@@ -42,6 +42,7 @@ class GameLoop {
         this.ball = new Ball({ x: window.innerWidth / 2 - 10, y: window.innerHeight / 2 + window.innerHeight / 3 }, { width: 20, height: 20 }, this.playGameEndEffect.bind(this));
         let lossText = ["You Lost!", "Better Luck Next Time!", "Close!", "Almost, Try Again!", "Good Try!"];
         this.randomLossText = lossText[Math.floor(Math.random() * lossText.length)];
+        console.log("mouseposssss", this.mousePos);
     }
 
     setStyles(fontSize) {
@@ -133,7 +134,8 @@ class GameLoop {
     }
 
     updateMousePosition(mPos) {
-        mousePos = mPos;
+        this.mousePos = mPos;
+        console.log("mousepos", mPos)
     }
 
     startLoop() {
@@ -228,7 +230,7 @@ class GameLoop {
         particlesToDelete = [];
 
         //draw paddle
-        this.paddle.moveTowards(mousePos.x, window.innerWidth, deltaTime);//smoothly move towards mousePos.x
+        this.paddle.moveTowards(this.mousePos.x, window.innerWidth, deltaTime);//smoothly move towards mousePos.x
         this.paddle.draw(this.c);
 
         //draw ball

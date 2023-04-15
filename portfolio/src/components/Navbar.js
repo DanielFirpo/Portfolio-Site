@@ -50,12 +50,10 @@ function Navbar() {
     function updateNavbarState() {
 
         if (window.pageYOffset > window.innerHeight) {
-            console.log("SETTING FIXED")
             setNavClass(" fixed");
         }
         else {
             setNavClass(" relative")
-            console.log("SETTING RELATIVE")
         }
     }
 

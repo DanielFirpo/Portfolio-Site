@@ -3,16 +3,11 @@ import GameLoop from "../GameLogic/GameLoop"
 
 import * as GameStates from "../GameLogic/GameStates"
 
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-scroll";
 
 let gameLoop;//need to declare outside of Game() cause otherwise we'll lose reference to it and it will keep looping forever, never being garbage collected
 
 function Game() {
-
-    document.onselectionchange = function () {
-        var sel = window.getSelection();
-        console.log("Selection pos:", sel.focusOffset, sel);
-    };
 
     let originalText = "Hello, my name is Daniel. Welcome to my portfolio.\nCheck out ⪼my projects⪻. Or, contact me ⪼here⪻.\n\nYou can also press Play to destroy this text!";
 
@@ -56,13 +51,11 @@ function Game() {
 
     useEffect(() => {
         setCanvas(canvasRef.current);
-        console.log("Canvas:", canvas)
     }, [canvasRef])
 
     useEffect(() => {
         window.addEventListener('resize', updateWindowSize)
         if (canvas) {
-            console.log("Resizing to " + canvasContainerRef.current.clientWidth)
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
         }
@@ -70,7 +63,6 @@ function Game() {
 
     useEffect(() => {
         if (canvas) {
-            console.log("Resizing 2 " + canvasContainerRef.current.clientWidth)
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
         }
@@ -93,21 +85,13 @@ function Game() {
     //     } catch { }
     // }, [gameText])
 
-    console.log("Rerendering Game")
-
     function setGameStateCallback(newGameState) {
-        if (gameState === GameStates.GAME_IN_PROGRESS) {
-            //console.log("SOMEONE SET IT TO IN PROGRESS. THAT FRICKIN FRICK")
-        }
         if (newGameState === GameStates.GAME_END_LOSS || newGameState === GameStates.GAME_END_WIN) {//only allowed to transition to game end while GAMEINPROGRESS
             if (gameState === GameStates.GAME_IN_PROGRESS) {
                 gameLoop.stopLoop();
-                console.log("GAME OVER", newGameState, gameState);
                 setGameState(newGameState);
-                console.log("Game state after setting to END_LOSS:", gameState, newGameState);
             }
         } else {
-            console.log("Setting game state to: ", newGameState);
             setGameState(newGameState);
         }
         if (newGameState === GameStates.GAME_NOT_STARTED) {
@@ -151,7 +135,6 @@ function Game() {
     }
 
     function onLinkClick(e) {
-        console.log("link clicked");
         window.location.href = e.target.getAttribute("href");
     }
 
@@ -164,7 +147,6 @@ function Game() {
 
         let result = []
 
-        //console.log("attemping to intertwingle text and links. Looping ", splitGameText.length + gameTextLinks.length, "times");
         for (let i = 0; i < splitGameText.length + gameTextLinks.length; i++) {
             if (i % 2 === 0) {
                 let text = splitGameText[gameTextIndex];
@@ -172,7 +154,6 @@ function Game() {
                 result.push(text);
             }
             else {
-                console.log("rendering link with text", gameTextLinks[linkTextIndex], "href is", hrefs[linkTextIndex])
                 // <Link activeClass="active" to="nav-projects" spy={true} smooth={true} offset={-30} duration={500}>
                 let link = <Link activeClass="active" spy={true} smooth={true} offset={20} duration={500} style={{ height: "1px" }} className="gameTextLink hover-shadow hover-color" to={hrefs[linkTextIndex]}>{gameTextLinks[linkTextIndex]}</Link>;
                 linkTextIndex++;
@@ -204,7 +185,6 @@ function Game() {
                 result += innerHTML[i];
             }
         }
-        console.log("InnerHTML, deformatted result:", innerHTML, result);
         return result;
     }
 
@@ -264,7 +244,7 @@ function Game() {
             }
             return (
                 <div id="nav-home">
-                    <div ref={canvasContainerRef} id="canvas-container"><canvas style={{ width: "100%", height: "100%" }} onTouchMove={(e) => { if (gameLoop) gameLoop.updateMousePosition({ x: e.touches[0].clientX, y: e.touches[0].clientY }); console.log("Touch") }} onMouseMove={(e) => { if (gameLoop) gameLoop.updateMousePosition({ x: e.pageX, y: e.pageY }) }} ref={canvasRef} id="game"></canvas></div>
+                    <div ref={canvasContainerRef} id="canvas-container"><canvas style={{ width: "100%", height: "100%" }} onTouchMove={(e) => { if (gameLoop) gameLoop.updateMousePosition({ x: e.touches[0].clientX, y: e.touches[0].clientY }); }} onMouseMove={(e) => { if (gameLoop) gameLoop.updateMousePosition({ x: e.pageX, y: e.pageY }) }} ref={canvasRef} id="game"></canvas></div>
                 </div>
             );
         case GameStates.GAME_END_LOSS:

@@ -6,6 +6,8 @@ import DigDug from "../../images/digdug.png"
 import PyCity from "../../images/pycity.PNG"
 import PennyTrader from "../../images/pennytrader.PNG"
 
+import { Icon } from '@iconify/react';
+
 function About() {
 
     const [selectedProject, setSelectedProject] = useState(undefined);
@@ -42,7 +44,7 @@ function About() {
         subtitle: "EXPLORE A PROCEDURALLY GENERATED CITY WITH FRIENDS",
         text: "A multiplayer, procedurally generated dungeon crawler game. Made with React and Django in 1 week. Contributed to the frontend visualization/animations using HTML5 canvas.",
         image: PyCity,
-        site: "https://pycity.netlify.com/",
+        site: undefined,// "https://pycity.netlify.com/", no longer hosted
         github: "https://github.com/DanielFirpo/FrontEnd"
     }
 
@@ -51,7 +53,7 @@ function About() {
         subtitle: "AN ECOMMERCE SITE SPECIALIZING IN SELLING RARE COINS",
         text: "A fully-featured ecommerce site. Made with React, Express and MySQL. Made entirely on my own in 3 months.",
         image: PennyTrader,
-        site: undefined, //"https://ultimatepennytrader.com/" no longer hosted
+        site: "https://pennytrader.shop",
         github: "https://github.com/DanielFirpo/penny-trader-fe"
     }
 
@@ -82,6 +84,7 @@ function About() {
                         </div>
                     </div>
                     <div onClick={() => { setSelectedProject(pennyProject) }} id="penny-project" className="project-container">
+                        <div style={{position:"relative"}}><div className='project-live-container'><Icon className='project-live-icon' icon="fluent:live-20-filled" color="white" /><div className='project-live'>LIVE</div></div></div>
                         <div className="project">
                             <h3 className="project-title">Coin Trader</h3>
                             <h6 className="project-subtitle">React / Express</h6>
@@ -89,6 +92,7 @@ function About() {
                         </div>
                     </div>
                     <div onClick={() => { setSelectedProject(digdugProject) }} id="digdug-project" className="project-container">
+                    <div style={{position:"relative"}}><div className='project-live-container'><Icon className='project-live-icon' icon="fluent:live-20-filled" color="white" /><div className='project-live'>LIVE</div></div></div>
                         <div className="project">
                             <h3 className="project-title">Dig Dug Clone</h3>
                             <h6 className="project-subtitle">Unity / C#</h6>
@@ -131,8 +135,8 @@ function About() {
                             </div>
                         </div>
                     ) : (
-                            <></>
-                        )
+                        <></>
+                    )
                 }
 
             </section>

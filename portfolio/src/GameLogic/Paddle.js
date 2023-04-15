@@ -4,6 +4,7 @@ class Paddle {
         this.velocity = 0;
         this.size = size;
         this.position = position;
+        console.log("new paddle pos:", position);
     }
 
     draw(context) {
