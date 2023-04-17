@@ -632,7 +632,7 @@ body {
 
 #contact {
   background-color: #252934;
-  height: calc(100vh - 380px);  
+  /* height: calc(100vh - 380px);   */
   min-height: 450px;
   display:flex;
   flex-direction: column;
@@ -786,7 +786,8 @@ body {
 }
 
 #footer {
-  height: 228px;
+  padding-top: 76px;
+  padding-bottom: 20px;
   background-color: #1b242f;
   display: flex;
   align-items: center;
