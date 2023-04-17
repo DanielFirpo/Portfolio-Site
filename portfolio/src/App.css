@@ -301,31 +301,36 @@ body {
 #covid-project {
   background-image: url("./images/covid-tracker.PNG");
   background-size: cover;
-  background-position: left; /* Center the image */
+  background-position-x: left; /* Center the image */
+  background-position-y: top;
   background-repeat: no-repeat; /* Do not repeat the image */
 }
 #pycity-project {
   background-image: url("./images/pycity.PNG");
   background-size: cover;
-  background-position: left; /* Center the image */
+  background-position-x: left; /* Center the image */
+  background-position-y: top;
   background-repeat: no-repeat; /* Do not repeat the image */
 }
 #digdug-project {
   background-image: url("./images/digdug.png");
   background-size: cover;
-  background-position: right; /* Center the image */
+  background-position-x: left; /* Center the image */
+  background-position-y: top;
   background-repeat: no-repeat; /* Do not repeat the image */
 }
 #penny-project {
   background-image: url("./images/pennytrader.PNG");
   background-size: cover;
-  background-position: center; /* Center the image */
+  background-position-x: left; /* Center the image */
+  background-position-y: top;
   background-repeat: no-repeat; /* Do not repeat the image */
 }
 #iwd-project {
   background-image: url("./images/IWDLiveview.PNG");
   background-size: cover;
-  background-position: center; /* Center the image */
+  background-position-x: left; /* Center the image */
+  background-position-y: top;
   background-repeat: no-repeat; /* Do not repeat the image */
 }
 #project-list {
@@ -1063,7 +1068,6 @@ body {
   }
 
   #contact {
-    height: calc(100vh - 345px);
     min-height: 550px;
   }
 
