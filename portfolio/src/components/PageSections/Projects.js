@@ -5,12 +5,22 @@ import Tally from "../../images/tally.PNG"
 import DigDug from "../../images/digdug.png"
 import PyCity from "../../images/pycity.PNG"
 import PennyTrader from "../../images/pennytrader.PNG"
+import IWDLiveview from "../../images/IWDLiveview.PNG"
 
 import { Icon } from '@iconify/react';
 
 function About() {
 
     const [selectedProject, setSelectedProject] = useState(undefined);
+
+    let iwdLiveviewProject = {
+        title: "IWD Liveview",
+        subtitle: "A POPULAR WEBSITE THAT I COMPLETELY REVAMPED.",
+        text: "A popular live streamer's \"Live View\" website. The live streamer likes to watch Esports events, but is not always allowed rights to rebroadcast them on stream. This site solves that issue by having everyone watch the event on their own PC, and it automatically synchronizes their players to the live streamer's playback position. This site averages about 2000 users on days it is needed. Made with React and Django.",
+        image: IWDLiveview,
+        site: "https://iwdlive.com/caster/iwd",
+        github: "https://github.com/stream-sync/iwdsync"
+    }
 
     let covidProject = {
         title: "Covid-19 Tracker",
@@ -58,6 +68,7 @@ function About() {
     }
 
 
+
     return (
         <div id="nav-projects">
             <section className="page-section" id="projects">
@@ -69,10 +80,25 @@ function About() {
                 <div id="tap-for-info">Tap for info</div>
 
                 <div id="project-list">
+                    <div onClick={() => { setSelectedProject(iwdLiveviewProject) }} id="iwd-project" className="project-container">
+                        <div className="project">
+                            <h3 className="project-title">IWD Liveview</h3>
+                            <h6 className="project-subtitle">React / Tailwind / Django</h6>
+                            <div className="learn-more-button">LEARN MORE</div>
+                        </div>
+                    </div>
                     <div onClick={() => { setSelectedProject(tallyProject) }} id="tally-project" className="project-container">
                         <div className="project">
                             <h3 className="project-title">Tally AI</h3>
                             <h6 className="project-subtitle">React / Redux / Express</h6>
+                            <div className="learn-more-button">LEARN MORE</div>
+                        </div>
+                    </div>
+                    <div onClick={() => { setSelectedProject(pennyProject) }} id="penny-project" className="project-container">
+                        <div style={{ position: "relative" }}><div className='project-live-container'><Icon className='project-live-icon' icon="fluent:live-20-filled" color="white" /><div className='project-live'>LIVE</div></div></div>
+                        <div className="project">
+                            <h3 className="project-title">Coin Trader</h3>
+                            <h6 className="project-subtitle">React / Express</h6>
                             <div className="learn-more-button">LEARN MORE</div>
                         </div>
                     </div>
@@ -83,16 +109,8 @@ function About() {
                             <div className="learn-more-button">LEARN MORE</div>
                         </div>
                     </div>
-                    <div onClick={() => { setSelectedProject(pennyProject) }} id="penny-project" className="project-container">
-                        <div style={{position:"relative"}}><div className='project-live-container'><Icon className='project-live-icon' icon="fluent:live-20-filled" color="white" /><div className='project-live'>LIVE</div></div></div>
-                        <div className="project">
-                            <h3 className="project-title">Coin Trader</h3>
-                            <h6 className="project-subtitle">React / Express</h6>
-                            <div className="learn-more-button">LEARN MORE</div>
-                        </div>
-                    </div>
                     <div onClick={() => { setSelectedProject(digdugProject) }} id="digdug-project" className="project-container">
-                    <div style={{position:"relative"}}><div className='project-live-container'><Icon className='project-live-icon' icon="fluent:live-20-filled" color="white" /><div className='project-live'>LIVE</div></div></div>
+                        <div style={{ position: "relative" }}><div className='project-live-container'><Icon className='project-live-icon' icon="fluent:live-20-filled" color="white" /><div className='project-live'>LIVE</div></div></div>
                         <div className="project">
                             <h3 className="project-title">Dig Dug Clone</h3>
                             <h6 className="project-subtitle">Unity / C#</h6>
@@ -106,7 +124,7 @@ function About() {
                             <div className="learn-more-button">LEARN MORE</div>
                         </div>
                     </div>
-                    <div className="empty-project"></div>
+                    {/* <div className="empty-project"></div> */}
                 </div>
 
                 {

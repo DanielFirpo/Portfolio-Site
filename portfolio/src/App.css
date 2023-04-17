@@ -316,14 +316,18 @@ body {
   background-position: right; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
 }
-
 #penny-project {
   background-image: url("./images/pennytrader.PNG");
   background-size: cover;
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
 }
-
+#iwd-project {
+  background-image: url("./images/IWDLiveview.PNG");
+  background-size: cover;
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+}
 #project-list {
   display: flex;
   max-width: 1170px;
@@ -535,7 +539,7 @@ body {
 }
 
 #project-popup-text {
-  font-size: 11pt;
+  font-size: 12pt;
   line-height: 18pt;
   margin-top: 15px;
   color: #444;

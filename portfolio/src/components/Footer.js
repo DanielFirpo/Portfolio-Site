@@ -13,8 +13,7 @@ function Footer() {
                     <a href="https://github.com/danielfirpo" target="_blank"><div className="footer-link" id="github-icon" /></a> {/*GitHub*/}
                     <a href="https://twitter.com/DanielFirpo2" target="_blank"><div className="footer-link" id="twitter-icon" /></a> {/*Twittah*/}
                 </div>
-                <div className="copyright" id="signature">DANIEL FIRPO · 2020</div>
-                <div className="copyright">DESIGN INSPIRATION FROM <a href="http://findmatthew.com/" id="copyright-year">FINDMATTHEW.COM</a>.</div>
+                <div className="copyright" id="signature">DANIEL FIRPO · 2023</div>
             </div>
         </div>
     );
