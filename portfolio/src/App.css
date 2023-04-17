@@ -633,6 +633,7 @@ body {
 #contact {
   background-color: #252934;
   /* height: calc(100vh - 380px);   */
+  padding-bottom: 65px;
   min-height: 450px;
   display:flex;
   flex-direction: column;

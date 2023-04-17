@@ -17,7 +17,7 @@ function About() {
                         <img id="profile-image" src={profile}></img>
                         <h3 id="about-title" className="small-title">Who am I?</h3>
                         <p id="about-text" className="text">
-                            I'm a full stack web developer and <a className="about-link" href="https://lambdaschool.com/">Bloom Institute of Technology</a> graduate.<br />
+                            I'm a full stack web developer and <a className="about-link" href="https://lambdaschool.com/" target='_blank'>Bloom Institute of Technology</a> graduate.<br />
                             I have serious passion for creating awesome-looking websites with amazing functionality.<br />
                             <Link to="nav-contact" spy={true} smooth={true} offset={50} duration={500}><div className="about-link">Lets make something great!</div></Link>
                         </p>
