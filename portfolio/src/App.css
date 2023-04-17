@@ -485,19 +485,21 @@ body {
   right: 0;  
   bottom: 0;  
   margin: auto;  
-  background-color: rgba(0, 0, 0, 0.582);
+  background-color: rgba(0, 0, 0, 0.884);
 }
 
 #project-popup-contents {
   z-index: 10000000000000;
-  width: 700px;
-  left: 25%;  
-  right: 25%;  
-  top: 3%;  
-  position: absolute; 
-  margin: auto;  
+  width: 70%;
+  /* left: 15%; */
+  /* right: 25%;   */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); 
+  position: absolute;   
   background-color: white;
   max-height: 95vh;
+  max-width: 780px;
   overflow-y: auto;
 }
 
@@ -1086,10 +1088,10 @@ body {
 
   #project-popup-contents {
     width: 100vw;
-    top: 5vh;
     left: 0;
     right: 0;
-
+    left: 0;
+    transform: translate(0, -50%);
   }
 
   #hamburger {
