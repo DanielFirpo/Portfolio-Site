@@ -13,6 +13,32 @@ function About() {
 
     const [selectedProject, setSelectedProject] = useState(undefined);
 
+    function disableScrolling() {
+        var x = window.scrollX;
+        var y = window.scrollY;
+        window.onscroll = function () {
+            window.scrollTo(x, y);
+        };
+    }
+
+    function enableScrolling() {
+        window.onscroll = function () { };
+    }
+
+    useEffect(() => {
+        //lock scroll when project inspect screen open
+        if (selectedProject) {
+            disableScrolling();
+        }
+        else {
+            enableScrolling();
+        }
+
+        return () => {
+            disableScrolling();
+        }
+    }, [selectedProject])
+
     let iwdLiveviewProject = {
         title: "IWD Liveview",
         subtitle: "A POPULAR WEBSITE THAT I COMPLETELY REVAMPED.",
