@@ -715,7 +715,7 @@ body {
   outline: none;
 }
 
-#submit-button {
+.button {
   padding: 10px 30px;
   outline: none;
   border: 2px solid #fff;
@@ -723,7 +723,7 @@ body {
   font-size: 12pt;
   font-family: "Arial";
   color: white;
-  animation: submit-hover-out .5s forwards;
+  animation: hover-out .5s forwards;
   margin-left: auto;
   margin-top: 5px;
 }
@@ -765,11 +765,11 @@ body {
   display: none;
 }
 
-#submit-button:hover {
-  animation: submit-hover-in .5s forwards;
+.button:hover {
+  animation: hover-in .5s forwards;
 }
 
-@keyframes submit-hover-out {
+@keyframes hover-out {
   from { 
     background-color: #04c2c9; 
     border-color: #04c2c9;
@@ -780,7 +780,7 @@ body {
   }
 }
 
-@keyframes submit-hover-in {
+@keyframes hover-in {
   from { 
     background-color: transparent; 
     border-color: #fff;
@@ -1048,7 +1048,7 @@ body {
   font-weight: 700;
 }
 
-.buttonContainer {
+#playButtonContainer {
   display: flex;
   flex-direction: column;
   margin-bottom: 20vh;
@@ -1057,7 +1057,69 @@ body {
   min-width: 200px;
 }
 
+
+/* <div className="page-section" id="nav-home-mobile">
+<span>
+    Hello, I'm <span id="home-name">Daniel Firpo</span>.
+    <br/>
+    I'm a full stack web developer.
+</span>
+<button className="button">
+    View my work <img id="arrow-right-icon" src={ArrowIcon}></img>
+</button>
+</div> */
+
+#nav-home-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  font-size: 16pt;
+  line-height: 36pt;
+
+  color: #fff;
+  font-family: "Raleway";
+
+  height: 100vh;
+}
+
+#home-name {
+  color: #e31b6d;
+  font-family: "Raleway-semibold";
+}
+
+#view-my-work-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0;
+  font-size: 13pt;
+  padding: 12px 20px 12px 20px;
+
+  margin-top: 50px;
+}
+
+#arrow-right-icon {
+  margin-left: 20px;
+}
+
 @media screen and (max-width: 530px) {
+
+  #preGameText {
+    font-size: 25px;
+    white-space: normal;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  #playButtonContainer {
+    display: none;
+  }
+
   .contact-form-input {
     width: 80vw;
     min-width: 50px !important;

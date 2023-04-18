@@ -4,10 +4,13 @@ import GameLoop from "../GameLogic/GameLoop"
 import * as GameStates from "../GameLogic/GameStates"
 
 import { Link } from "react-scroll";
+import ArrowIcon from "../images/arrow-right-icon.svg";
 
 let gameLoop;//need to declare outside of Game() cause otherwise we'll lose reference to it and it will keep looping forever, never being garbage collected
 
 function Game() {
+
+    const MOBILE_BREAKPOINT = 530;
 
     let originalText = "Hello, my name is Daniel. Welcome to my portfolio.\nCheck out ⪼my projects⪻. Or, contact me ⪼here⪻.\n\nYou can also press Play to destroy this text!";
 
@@ -59,12 +62,20 @@ function Game() {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
         }
+        return () => {
+            window.removeEventListener('resize', updateWindowSize)
+        }
     }, [])
 
     useEffect(() => {
         if (canvas) {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
+        }
+
+        //end game if screen reduced to mobile size
+        if (window.innerWidth < 530) {
+            if (gameLoop) setGameStateCallback(GameStates.GAME_NOT_STARTED);
         }
     }, [windowSize])
 
@@ -204,35 +215,56 @@ function Game() {
     switch (gameState) {
         case GameStates.GAME_NOT_STARTED:
             return (
-                <div id="nav-home">
-                    <div id="preGame">
-                        {/* <div><textarea cols="40" id="preGameText" onChange={(e) => { setGameText(e.target.value) }}>{gameText}<a > test</a></textarea></div> */}
-                        <span id="preGameText" onKeyUp={(e) => {
-                        }} onInput={(e) => {
-                            //super hacky but it fixes a bug, so.....
-                            // var sel = window.getSelection();
-                            // caretPos = sel.focusOffset;
-                            // node = e.target;
-                            // console.error(e.target)
-                            // setGameText(e.target.textContent);//deformatGameText(e.target.innerHTML.replace(/<br>/g, "").replace(/<div>/g, "").replace(/<\/div>/g, ""))
-                            //setGameText(deformatGameText(e.target.innerHTML.replace(/<br>/g, "").replace(/<div>/g, "").replace(/<\/div>/g, "")))
-                        }} onKeyDown={(e) => { customEnterBehaviour(e) }}>
-                            {
-                                gameText.includes("⪻") || gameText.includes("⪼") ?
-                                    formatGameText().map((textOrLink) => {
-                                        return textOrLink;
-                                    })
-                                    :
-                                    gameText
-                            }
-                        </span>
-                        <div class="columnPadding"></div>
-                        <div className="buttonContainer">
-                            <div><button onClick={(e) => { setGameState(GameStates.GAME_IN_PROGRESS); updateWindowSize(); }}>Play</button></div>
-                            {/* <div><button onClick={(e) => { setGameText(originalText) }}>Reset</button></div> */}
+
+                windowSize.width > MOBILE_BREAKPOINT ?
+
+                    <div id="nav-home">
+                        <div id="preGame">
+                            {/* <div><textarea cols="40" id="preGameText" onChange={(e) => { setGameText(e.target.value) }}>{gameText}<a > test</a></textarea></div> */}
+                            <span id="preGameText" onKeyUp={(e) => {
+                            }} onInput={(e) => {
+                                //super hacky but it fixes a bug, so.....
+                                // var sel = window.getSelection();
+                                // caretPos = sel.focusOffset;
+                                // node = e.target;
+                                // console.error(e.target)
+                                // setGameText(e.target.textContent);//deformatGameText(e.target.innerHTML.replace(/<br>/g, "").replace(/<div>/g, "").replace(/<\/div>/g, ""))
+                                //setGameText(deformatGameText(e.target.innerHTML.replace(/<br>/g, "").replace(/<div>/g, "").replace(/<\/div>/g, "")))
+                            }} onKeyDown={(e) => { customEnterBehaviour(e) }}>
+                                {
+                                    gameText.includes("⪻") || gameText.includes("⪼") ?
+                                        formatGameText().map((textOrLink) => {
+                                            return textOrLink;
+                                        })
+                                        :
+                                        gameText
+                                }
+                            </span>
+                            <div class="columnPadding"></div>
+                            <div id="playButtonContainer">
+                                <div><button onClick={(e) => { setGameState(GameStates.GAME_IN_PROGRESS); updateWindowSize(); }}>Play</button></div>
+                                {/* <div><button onClick={(e) => { setGameText(originalText) }}>Reset</button></div> */}
+                            </div>
                         </div>
                     </div>
-                </div>
+
+                    :
+
+                    <div id="nav-home-mobile">
+                        <span>
+                            Hello, I'm <span id="home-name">Daniel Firpo</span>.
+                            <br />
+                            I'm a full stack web developer.
+                        </span>
+                        <div>
+                            <Link activeClass="active" spy={true} smooth={true} offset={20} duration={500} style={{ height: "1px" }} to="nav-about">
+                                <button id="view-my-work-button" className="button">
+                                    View my work <img id="arrow-right-icon" src={ArrowIcon}></img>
+                                </button>
+                            </Link>
+                        </div>
+                    </div>
+
             );
         case GameStates.GAME_IN_PROGRESS:
             if (canvas) {
@@ -268,7 +300,7 @@ function Game() {
 
 export default Game;
 
-//  // to count each character 
+//  // to count each character
 //  var charIndex = 0;
 //  // find the top ypos and then move down half a char space
 //  var yPos = centerY - fontSize * line.length * 0.5 * textVertSpacing + fontSize * textVertSpacing / 2;

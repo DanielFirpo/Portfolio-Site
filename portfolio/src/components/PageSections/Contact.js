@@ -23,7 +23,7 @@ function Contact() {
                     <input type="email" name="email" placeholder="Your Email Address" className="contact-form-input" id="email"></input>
                     <textarea type="text" name="message" placeholder="Your Message" className="contact-form-input" id="message"></textarea>
                     <div id={successId}><div id="success-text">Your message was sent successfully. Thanks!</div><div onClick={() => {setSuccessId("success-hidden")}} id="success-close"></div></div>
-                    <button type="submit" onClick={() => {setSuccessId("success")}} id="submit-button">SUBMIT</button>
+                    <button type="submit" onClick={() => {setSuccessId("success")}} className="button" id="submit-button">SUBMIT</button>
                 </form>
 
                 <div id="contact-methods">
