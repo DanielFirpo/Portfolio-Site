@@ -326,7 +326,7 @@ body {
 #penny-project {
   background-image: url("./images/pennytrader.PNG");
   background-size: cover;
-  background-position-x: left; /* Center the image */
+  background-position-x: center; /* Center the image */
   background-position-y: top;
   background-repeat: no-repeat; /* Do not repeat the image */
 }
@@ -457,6 +457,7 @@ body {
   pointer-events: none;
   position: absolute;
   right: 0;
+  border: 1px solid white;
 }
 
 .project-live {

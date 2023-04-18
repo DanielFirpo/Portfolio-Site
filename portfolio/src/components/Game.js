@@ -251,20 +251,24 @@ function Game() {
 
                     :
 
-                    <div id="nav-home-mobile">
-                        <span>
-                            Hello, I'm <span id="home-name">Daniel Firpo</span>.
-                            <br />
-                            I'm a full stack web developer.
-                        </span>
-                        <div>
-                            <Link activeClass="active" spy={true} smooth={true} offset={20} duration={500} style={{ height: "1px" }} to="nav-about">
-                                <button id="view-my-work-button" className="button">
-                                    View my work <img id="arrow-right-icon" src={ArrowIcon}></img>
-                                </button>
-                            </Link>
+                    <>
+                        {/*this needs to be here so that "back to top" button still has #nav-home to target*/}
+                        <div id="nav-home"></div>
+                        <div id="nav-home-mobile">
+                            <span>
+                                Hello, I'm <span id="home-name">Daniel Firpo</span>.
+                                <br />
+                                I'm a full stack web developer.
+                            </span>
+                            <div>
+                                <Link activeClass="active" spy={true} smooth={true} offset={20} duration={500} style={{ height: "1px" }} to="nav-about">
+                                    <button id="view-my-work-button" className="button">
+                                        View my work <img id="arrow-right-icon" src={ArrowIcon}></img>
+                                    </button>
+                                </Link>
+                            </div>
                         </div>
-                    </div>
+                    </>
 
             );
         case GameStates.GAME_IN_PROGRESS:

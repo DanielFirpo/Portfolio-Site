@@ -107,7 +107,7 @@ function About() {
 
                 <div id="project-list">
                     <div onClick={() => { setSelectedProject(iwdLiveviewProject) }} id="iwd-project" className="project-container">
-                        <div style={{ position: "relative" }}><div className='project-live-container'><Icon className='project-live-icon' icon="fluent:live-20-filled" color="white" /><div className='project-live'>LIVE</div></div></div>
+                        <div style={{ position: "relative" }}><div className='project-live-container'><Icon className='project-live-icon' icon="fluent:live-20-filled" color="white" /><div className='project-live'>LIVE DEMO</div></div></div>
                         <div className="project">
                             <h3 className="project-title">IWD Liveview</h3>
                             <h6 className="project-subtitle">React / Tailwind / Django</h6>
@@ -115,7 +115,7 @@ function About() {
                         </div>
                     </div>
                     <div onClick={() => { setSelectedProject(tallyProject) }} id="tally-project" className="project-container">
-                        <div style={{ position: "relative" }}><div className='project-live-container'><Icon className='project-live-icon' icon="fluent:live-20-filled" color="white" /><div className='project-live'>LIVE</div></div></div>
+                        <div style={{ position: "relative" }}><div className='project-live-container'><Icon className='project-live-icon' icon="fluent:live-20-filled" color="white" /><div className='project-live'>LIVE DEMO</div></div></div>
                         <div className="project">
                             <h3 className="project-title">Tally AI</h3>
                             <h6 className="project-subtitle">React / Redux / Express</h6>
@@ -123,7 +123,7 @@ function About() {
                         </div>
                     </div>
                     <div onClick={() => { setSelectedProject(pennyProject) }} id="penny-project" className="project-container">
-                        <div style={{ position: "relative" }}><div className='project-live-container'><Icon className='project-live-icon' icon="fluent:live-20-filled" color="white" /><div className='project-live'>LIVE</div></div></div>
+                        <div style={{ position: "relative" }}><div className='project-live-container'><Icon className='project-live-icon' icon="fluent:live-20-filled" color="white" /><div className='project-live'>LIVE DEMO</div></div></div>
                         <div className="project">
                             <h3 className="project-title">Coin Trader</h3>
                             <h6 className="project-subtitle">React / Express</h6>
@@ -138,7 +138,7 @@ function About() {
                         </div>
                     </div>
                     <div onClick={() => { setSelectedProject(digdugProject) }} id="digdug-project" className="project-container">
-                        <div style={{ position: "relative" }}><div className='project-live-container'><Icon className='project-live-icon' icon="fluent:live-20-filled" color="white" /><div className='project-live'>LIVE</div></div></div>
+                        <div style={{ position: "relative" }}><div className='project-live-container'><Icon className='project-live-icon' icon="fluent:live-20-filled" color="white" /><div className='project-live'>LIVE DEMO</div></div></div>
                         <div className="project">
                             <h3 className="project-title">Dig Dug Clone</h3>
                             <h6 className="project-subtitle">Unity / C#</h6>
