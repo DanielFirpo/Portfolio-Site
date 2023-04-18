@@ -27,6 +27,15 @@ function About() {
                     <div className="skill-container"> {/* <div className="skill-offset" /><div className="skill-offset" /><div className="skill-offset" /> */}
                     <div className="skill">HTML</div><div className="skill-bar"/><div className="skill-checkmark"></div></div>
 
+                    <div className="skill-container"> {/* <div className="skill-offset" />*/}
+                    <div className="skill">Tailwind CSS</div><div className="skill-bar"/><div className="skill-checkmark"></div></div>
+
+                    <div className="skill-container"> {/* <div className="skill-offset" />*/}
+                    <div className="skill">Node.js</div><div className="skill-bar"/><div className="skill-checkmark"></div></div>
+
+                    <div className="skill-container">
+                    <div className="skill">Express.js</div><div className="skill-bar"/><div className="skill-checkmark"></div></div>
+
                     <div className="skill-container"> {/* <div className="skill-offset" /><div className="skill-offset" /><div className="skill-offset" /><div className="skill-offset" /> */}
                     <div className="skill">Unity</div><div className="skill-bar"/><div className="skill-checkmark"></div></div>
 
@@ -34,13 +43,7 @@ function About() {
                     <div className="skill">C#</div><div className="skill-bar"/><div className="skill-checkmark"></div></div>
 
                     <div className="skill-container"> {/* <div className="skill-offset" /><div className="skill-offset" />*/}
-                    <div className="skill">Python</div><div className="skill-bar"/><div className="skill-checkmark"></div></div>
-
-                    <div className="skill-container"> {/* <div className="skill-offset" />*/}
-                    <div className="skill">Node.js</div><div className="skill-bar"/><div className="skill-checkmark"></div></div>
-
-                    <div className="skill-container">
-                    <div className="skill">Express</div><div className="skill-bar"/><div className="skill-checkmark"></div></div>
+                    <div className="skill">Java</div><div className="skill-bar"/><div className="skill-checkmark"></div></div>
                 </div>
 
             </section>

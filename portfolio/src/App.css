@@ -198,6 +198,7 @@ body {
   animation-name: skill-hover-out;
   animation-duration: .5s;
   animation-fill-mode: forwards;
+  max-width: 900px;
 }
 
 .skill-container:hover {
@@ -246,6 +247,7 @@ body {
   height: 100%;
   background-color: #04c2c9;
   width: 150px;
+  min-width: 150px;
   color: white;
   font-family: "Raleway-bold";
   font-size: 11pt;
@@ -253,6 +255,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+
 }
 
 .skill-bar {
@@ -265,6 +268,7 @@ body {
 .skill-checkmark {
   height: 100%;
   width: 18px;
+  min-width: 18px;
   background-color: #04c2c9;
   padding-right: 10px;
   display: flex;

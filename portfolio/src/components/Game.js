@@ -62,6 +62,7 @@ function Game() {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
         }
+        updateWindowSize();
         return () => {
             window.removeEventListener('resize', updateWindowSize)
         }

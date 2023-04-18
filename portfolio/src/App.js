@@ -129,8 +129,8 @@ let particleConfig =
         <Game/>
         <Navbar/>
         <About/>
-        <Skills/>
         <Projects/>
+        <Skills/>
         <Contact/>
         <Footer/>
     </div>
