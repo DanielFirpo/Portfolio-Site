@@ -51,7 +51,7 @@ function About() {
     let covidProject = {
         title: "Covid-19 Tracker",
         subtitle: "UP TO DATE INFO, ALL IN ONE PLACE.",
-        text: "Up to date info on testing, confirmed cases, and deaths for US states and counties all in one place. Built with Python, Plotly, FastAPI, and MongoDB. Contributed to the project as a front end developer by making sure every detail matched the design doc. Used Plotly, HTML, and CSS.",
+        text: "Up to date info on testing, confirmed cases, and deaths for US states and counties all in one place. Contributed to the project as a front end developer by making sure every detail matched the design doc. Used Plotly, HTML, and CSS.",
         image: CovidTracker,
         site: undefined,//"https://ncov19.us/" no longer hosted
         github: "https://github.com/DanielFirpo/front-end"
