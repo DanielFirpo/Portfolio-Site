@@ -62,7 +62,7 @@ function About() {
         subtitle: "UNLOCK YOUR BUSINESS DATA.",
         text: "View your business's reputation as a whole, from review analytics. Built with React, Redux, Express, and Postgres. Contributed to the dashboard's widgets system, tab system, and many other frontend features using React, Redux, HTML, and CSS.",
         image: Tally,
-        site: undefined, //"https://www.tally-ai.com/" no longer hosted
+        site: "https://www.tallyai.online/",
         github: "https://github.com/DanielFirpo/tally-ai-fe"
     }
 

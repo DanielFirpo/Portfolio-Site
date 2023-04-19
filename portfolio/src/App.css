@@ -509,7 +509,7 @@ body {
   position: absolute;   
   background-color: white;
   max-height: 95vh;
-  max-width: 780px;
+  max-width: 760px;
   overflow-y: auto;
 }
 
